@@ -1,1 +1,3 @@
 moderngl-window
+pyglm   # 不能安装glm
+pyqt5   #非必要
