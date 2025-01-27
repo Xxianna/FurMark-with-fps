@@ -42,9 +42,9 @@ class App(mglw.WindowConfig):
         self.ctx.clear()
         self.set_uniform('u_time', time)
         self.quad.render(self.program)
-
-        self.writer.text = f"FPS: {self.tttimer.fps_average:.2f}"
-        self.writer.draw((200, 200), size=30)
+        if self.tttimer.time:
+            self.writer.text = f"FPS: {self.tttimer.fps_average:.2f}"
+            self.writer.draw((200, 200), size=30)
 
 if __name__ == '__main__':
     mglw.run_window_config(App)
