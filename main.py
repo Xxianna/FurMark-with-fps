@@ -45,6 +45,13 @@ class App(mglw.WindowConfig):
         if self.tttimer.time:
             self.writer.text = f"FPS: {self.tttimer.fps_average:.2f}"
             self.writer.draw((200, 200), size=30)
+            # print(f"FPS: {self.tttimer.fps_average:.2f}") #无头模式下使用
 
 if __name__ == '__main__':
-    mglw.run_window_config(App)
+    mglw.run_window_config(App) #默认模式
+    # mglw.run_window_config(App, args=["-wnd", "headless"])  # 无窗口模式
+    # mglw.run_window_config(App, args=["-wnd", "pyqt5"])  # pyqt5模式 使用时屏蔽“python环境\Lib\site-packages\moderngl_window\context\pyqt5\window.py“中的        
+    """
+    if self._ctx:
+            self.set_default_viewport()
+    """
